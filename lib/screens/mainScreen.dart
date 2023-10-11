@@ -3,7 +3,7 @@ import 'dart:js';
 
 
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/create.dart';
-import 'package:calculadora_de_la_vida/screens/ScreenAdult.dart';
+import 'package:calculadora_de_la_vida/screens/ScreenYoung.dart';
 import 'package:calculadora_de_la_vida/screens/SrceenChild.dart';
 import 'package:flutter/material.dart';
 

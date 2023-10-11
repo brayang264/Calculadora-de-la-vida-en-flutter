@@ -1,6 +1,6 @@
-import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Adulto.dart';
+import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Adult.dart';
 
-class AdultoMayor extends Adulto{
+class AdultoMayor extends Adult{
   int pension;
   
   AdultoMayor({

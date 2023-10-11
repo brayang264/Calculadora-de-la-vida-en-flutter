@@ -1,8 +1,7 @@
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/create.dart';
 import 'package:calculadora_de_la_vida/screens/ScreenFinal.dart';
-import 'package:calculadora_de_la_vida/screens/ScreenOldAdult.dart';
 import 'package:flutter/material.dart';
-class ScreenAdult extends StatelessWidget{
+class ScreenOldAdult extends StatelessWidget{
   final TextEditingController _textController = TextEditingController();
   final TextEditingController _textController2 = TextEditingController();
   final TextEditingController _textController3 = TextEditingController();
@@ -19,7 +18,7 @@ class ScreenAdult extends StatelessWidget{
     bool isChecked = false;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Etapa de la adultez"),
+        title: const Text("Etapa de la vejez"),
         backgroundColor: const Color.fromARGB(251, 104, 208, 252),
       ),
       body: SingleChildScrollView(
@@ -27,7 +26,7 @@ class ScreenAdult extends StatelessWidget{
           child: Column(
             children: [
               const SizedBox(height: 30),
-              const Text("Esta etapa va desde los 25 hasta los 60 años, completa la siguiente información: ",
+              const Text("Esta etapa va desde los 60 hasta el la actualidad, completa la siguiente información: ",
               style:  TextStyle(
                 color: Colors.black,
                 fontFamily: "Century Gothic",
@@ -154,8 +153,7 @@ class ScreenAdult extends StatelessWidget{
       create.createAdult(int.parse(salario)*int.parse(trabajados), 
       int.parse(ahorros), int.parse(herencia), int.parse(estudios), int.parse(recreacion), int.parse(pareja), 
       int.parse(subsidio), int.parse(inversiones), int.parse(hijos), int.parse(varios));
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>(create.edad>60)?ScreenOldAdult():ScreenFinal()));
-      
+      //Navigator.push(context, MaterialPageRoute(builder: (context)=>(create.edad>60)?ScreenYoung():ScreenFinal()));
     }
   }
 

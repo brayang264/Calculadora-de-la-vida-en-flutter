@@ -1,11 +1,11 @@
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Joven.dart';
 
-class Adulto extends Joven{
+class Adult extends Joven{
     int salario;
     int inversiones;
     int hijos;
     int varios;
-  Adulto({
+  Adult({
     required int edad,
     required int ahorros,
     required int estudios,

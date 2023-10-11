@@ -1,18 +1,22 @@
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/create.dart';
-import 'package:calculadora_de_la_vida/screens/ScreenYoung.dart';
+import 'package:calculadora_de_la_vida/screens/ScreenAdult.dart';
 import 'package:calculadora_de_la_vida/screens/ScreenFinal.dart';
+import 'package:calculadora_de_la_vida/screens/SrceenChild.dart';
 import 'package:flutter/material.dart';
-class ScreenChild extends StatelessWidget{
+class ScreenYoung extends StatelessWidget{
   final TextEditingController _textController = TextEditingController();
   final TextEditingController _textController2 = TextEditingController();
   final TextEditingController _textController3 = TextEditingController();
   final TextEditingController _textController4 = TextEditingController();
   final TextEditingController _textController5 = TextEditingController();
+  final TextEditingController _textController6 = TextEditingController();
+  final TextEditingController _textController7 = TextEditingController();
+  final TextEditingController _textController8 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Etapa de la Niñez"),
+        title: const Text("Etapa de la juventud"),
         backgroundColor: const Color.fromARGB(251, 104, 208, 252),
       ),
       body: SingleChildScrollView(
@@ -20,7 +24,7 @@ class ScreenChild extends StatelessWidget{
           child: Column(
             children: [
               const SizedBox(height: 30),
-              const Text("Esta etapa va desde que naciste hasta los 14 años, completa la siguiente información: ",
+              const Text("Esta etapa va desde los 15 hasta los 24 años, completa la siguiente información: ",
               style:  TextStyle(
                 color: Colors.black,
                 fontFamily: "Century Gothic",
@@ -38,7 +42,7 @@ class ScreenChild extends StatelessWidget{
               TextField(
                 controller: _textController,
                 decoration: const InputDecoration(
-                  label: Text("Ingresa el total de ahorros que tuviste en esta etapa",
+                  label: Text("Ingresa acá el promedio de tu salario durante esta etapa",
                   ),
                   border: OutlineInputBorder()
                 ),
@@ -47,36 +51,58 @@ class ScreenChild extends StatelessWidget{
               TextField(
                 controller: _textController2,
                 decoration: const InputDecoration(
-                  label: Text("Si durante esta etapa heredaste algo, ingresa el valor total de tu herencia",),
+                  label: Text("Ingresa acá la cantidad de años que trabajaste durante esta etapa",),
                 border: OutlineInputBorder()),
               ),
               const SizedBox(height: 10),
               TextField(
                 controller: _textController3,
                 decoration: const InputDecoration(
-                  label: Text("Si alguien te deba alguna mensualidad ingresa el valor que te daban mes a mes",),
+                  label: Text("Ingresa acá el total de dinero que ahorraste",),
                 border: OutlineInputBorder()),
               ),
               const SizedBox(height: 10),
               TextField(
                 controller: _textController4,
                 decoration: const InputDecoration(
-                  label: Text("¿Durante cuantos años te dieron esta mensualidad en esta etapa?",),
+                  label: Text("Si recibiste alguna herencia pon el valor total, si no pon 0",),
                 border: OutlineInputBorder()),
               ),
               const SizedBox(height: 10),
               TextField(
                 controller: _textController5,
                 decoration: const InputDecoration(
-                  label: Text("Ingresa el dinero total acumulado durante los años que te daban"
-                  " algo por hacer mandados o tareas que te encargaban",),
+                  label: Text("Ingresa acá el monto que gastaste en tus estudios",),
+                border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: _textController6,
+                decoration: const InputDecoration(
+                  label: Text("Ingresa acá el promedio que gastaste en recreación o parches durante todos estos años",),
+                border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: _textController7,
+                decoration: const InputDecoration(
+                  label: Text("Si tuviste pareja, ingresa el monto que invertiste en el/ella (pon un monto negativo"
+                  " si gastaste más dinero del que recibiste)",),
+                border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: _textController8,
+                decoration: const InputDecoration(
+                  label: Text("Si recibiste algun subsidio, ingresa el total que recibiste durante todos esos años",),
                 border: OutlineInputBorder()),
               ),
               const SizedBox(height: 25),
               ElevatedButton(
                 onPressed: (){
-                  nextStage(context, _textController.text, _textController2.text, _textController3.text,
-                  _textController4.text, _textController5.text);
+                  nextStage(context,_textController.text,_textController2.text,_textController3.text,
+                  _textController4.text,_textController5.text,_textController6.text,_textController7.text,
+                  _textController8.text);
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(200, 50)
@@ -90,18 +116,18 @@ class ScreenChild extends StatelessWidget{
       );
   }
   //Metodos
-  void nextStage(BuildContext context, String ahorros, String herencia, String mensualidad, String tiempoMens,
-  String mandados){
-    if(!(isNumber(ahorros)||isNumber(herencia)||isNumber(mensualidad)||isNumber(tiempoMens)||isNumber(mandados))){
-      showAlert(context, "Ingrese solamente valores positivos o negativos\nSi no recibio alguno de los ingresos"
+  void nextStage(BuildContext context, String salario, String trabajados, String ahorros,String herencia,
+  String estudios, String recreacion, String pareja, String subsidio ){
+    if(!(isNumber(salario)||isNumber(trabajados)||isNumber(ahorros)||isNumber(herencia)
+    ||isNumber(estudios)||isNumber(recreacion)||isNumber(pareja)||isNumber(subsidio))){
+      showAlert(context,"Ingrese solamente valores positivos o negativos\nSi no recibio alguno de los ingresos"
       " solicitados ponga un 0");
     }else{
-      Create create =Create.getInstance();
-      create.createChild(int.parse(ahorros), int.parse(herencia),
-      int.parse(mensualidad)*int.parse(tiempoMens),int.parse(mandados));
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>(create.edad>14)?ScreenYoung():ScreenFinal()));
+      Create create = Create.getInstance();
+      create.createYoung(int.parse(salario)*int.parse(trabajados), int.parse(ahorros), 
+      int.parse(herencia), int.parse(estudios), int.parse(recreacion), int.parse(pareja), int.parse(subsidio));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>(create.edad>24)?ScreenAdult():ScreenFinal()));
     }
-    
   }
 
     bool isNumber(String text){
