@@ -15,7 +15,8 @@ class AdultoMayor extends Adulto{
     required int inversiones,
     required int hijos,
     required int varios,
+    required int acumulado,
     required this.pension
   }):super(edad: edad,ahorros: ahorros,estudios: estudios,recreacion: recreacion,gastosPareja: gastosPareja,
-  salario: salario,inversiones: inversiones,hijos: hijos,varios: varios,subsidio: subsidio,herencia: herencia);
+  salario: salario,inversiones: inversiones,hijos: hijos,varios: varios,subsidio: subsidio,herencia: herencia, acumulado: acumulado);
 }
