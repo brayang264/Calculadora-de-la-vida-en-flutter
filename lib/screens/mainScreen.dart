@@ -4,6 +4,7 @@ import 'dart:js';
 
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/create.dart';
 import 'package:calculadora_de_la_vida/screens/ScreenAdult.dart';
+import 'package:calculadora_de_la_vida/screens/SrceenChild.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget{
@@ -54,30 +55,15 @@ class MainScreen extends StatelessWidget{
         ),
     );
   }
-  
   void openScreen(String age, BuildContext context){
     if(!isNumber(age)){
       showAlert(context);
     }else{
-      int screen = calculateScree(int.parse(age));
-      if(screen ==2){
-        Create create = Create.getInstance();
+      Create create = Create.getInstance();
         create.edad = int.parse(age);
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenAdult()));
-      }
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenChild()));
     }
 
-  }
-  int calculateScree(int age){
-    if(age<=14){
-      return 1;
-    }else if(age <=24){
-      return 2;
-    }else if(age <=60){
-      return 3;
-    }else{
-      return 4;
-    }
   }
   bool isNumber(String text){
     return (int.tryParse(text)!=null)?true:false;

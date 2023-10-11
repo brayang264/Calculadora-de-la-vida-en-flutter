@@ -1,9 +1,9 @@
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Persona.dart';
 
-class Nino extends Persona{
+class Child extends Persona{
   int mensualidad;
   int mandados;
-  Nino({
+  Child({
     required int edad,
     required int ahorros,
     required int herencia,
