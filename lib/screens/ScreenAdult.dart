@@ -118,7 +118,7 @@ class ScreenAdult extends StatelessWidget{
               TextField(
                 controller: _textController11,
                 decoration: const InputDecoration(
-                  label: Text("Ingressa acá ingresos o gastos adicionales (Si es un gasto ingresalo "
+                  label: Text("Ingresa acá ingresos o gastos adicionales (Si es un gasto ingresalo "
                   "como número negativo)",),
                 border: OutlineInputBorder()),
               ),

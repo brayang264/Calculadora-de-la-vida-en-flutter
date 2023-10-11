@@ -1,9 +1,9 @@
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Adult.dart';
 
-class AdultoMayor extends Adult{
+class OldAdult extends Adult{
   int pension;
   
-  AdultoMayor({
+  OldAdult({
     required int edad,
     required int ahorros,
     required int estudios,

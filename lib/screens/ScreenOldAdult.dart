@@ -13,9 +13,9 @@ class ScreenOldAdult extends StatelessWidget{
   final TextEditingController _textController9 = TextEditingController();
   final TextEditingController _textController10 = TextEditingController();
   final TextEditingController _textController11 = TextEditingController();
+  final TextEditingController _textController12 = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    bool isChecked = false;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Etapa de la vejez"),
@@ -110,15 +110,23 @@ class ScreenOldAdult extends StatelessWidget{
               TextField(
                 controller: _textController10,
                 decoration: const InputDecoration(
-                  label: Text("Ingresa acá el monto total que invertiste en tus hijos",),
+                  label: Text("Ingresa acá el monto total que recibe o gasta en sus hijos(si gasta ingrese un valor"
+                  " negativo)",),
                 border: OutlineInputBorder()),
               ),
               const SizedBox(height: 10),
               TextField(
                 controller: _textController11,
                 decoration: const InputDecoration(
-                  label: Text("Ingressa acá ingresos o gastos adicionales (Si es un gasto ingresalo "
+                  label: Text("Ingresa acá ingresos o gastos adicionales (Si es un gasto ingresalo "
                   "como número negativo)",),
+                border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: _textController12,
+                decoration: const InputDecoration(
+                  label: Text("Ingresa el valor de la pensión que recibes",),
                 border: OutlineInputBorder()),
               ),
               const SizedBox(height: 25),
@@ -126,7 +134,8 @@ class ScreenOldAdult extends StatelessWidget{
                 onPressed: (){
                   nextStage(context, _textController.text, _textController2.text, _textController3.text, 
                   _textController4.text, _textController5.text, _textController6.text, _textController7.text, 
-                  _textController8.text, _textController9.text, _textController10.text, _textController11.text);
+                  _textController8.text, _textController9.text, _textController10.text, _textController11.text,
+                  _textController12.text);
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(200, 50)
@@ -142,18 +151,18 @@ class ScreenOldAdult extends StatelessWidget{
   //Metodos
   void nextStage(BuildContext context, String salario, String trabajados, String ahorros,String herencia,
   String estudios, String recreacion, String pareja, String subsidio, String inversiones, 
-  String hijos, String varios ){
+  String hijos, String varios, String pension ){
     if(!(isNumber(salario)||isNumber(trabajados)||isNumber(ahorros)||isNumber(herencia)
     ||isNumber(estudios)||isNumber(recreacion)||isNumber(pareja)||isNumber(subsidio)||isNumber(inversiones)
-    ||isNumber(hijos)||isNumber(varios))){
+    ||isNumber(hijos)||isNumber(varios)||isNumber(pension))){
       showAlert(context,"Ingrese solamente valores positivos o negativos\nSi no recibio alguno de los ingresos"
       " solicitados ponga un 0");
     }else{
-      Create create =Create.getInstance();
-      create.createAdult(int.parse(salario)*int.parse(trabajados), 
-      int.parse(ahorros), int.parse(herencia), int.parse(estudios), int.parse(recreacion), int.parse(pareja), 
-      int.parse(subsidio), int.parse(inversiones), int.parse(hijos), int.parse(varios));
-      //Navigator.push(context, MaterialPageRoute(builder: (context)=>(create.edad>60)?ScreenYoung():ScreenFinal()));
+      Create create = Create.getInstance();
+      create.createOldAdult(int.parse(salario)*int.parse(trabajados), 
+      int.parse(ahorros),int.parse(herencia), int.parse(estudios), int.parse(recreacion), int.parse(pareja), 
+      int.parse(subsidio), int.parse(inversiones), int.parse(hijos), int.parse(varios), int.parse(pension));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenFinal()));
     }
   }
 

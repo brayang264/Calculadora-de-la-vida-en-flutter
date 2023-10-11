@@ -11,4 +11,5 @@ class Persona{
   set setEdad(int edad) => this.edad = edad;
   int get getAhorros => ahorros;
   set setAhorros(int ahorros)=>this.ahorros = ahorros;
+  int get getAcumulado => acumulado;
 }
