@@ -1,4 +1,4 @@
-import 'package:calculadora_de_la_vida/Clases%20objetos/operaciones.dart';
+import 'package:calculadora_de_la_vida/Clases%20y%20objetos/operaciones.dart';
 
 class Calculadora implements Operaciones{
   @override

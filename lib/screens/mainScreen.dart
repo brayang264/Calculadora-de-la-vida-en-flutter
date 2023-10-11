@@ -1,6 +1,9 @@
 import 'dart:html';
 import 'dart:js';
 
+
+import 'package:calculadora_de_la_vida/Clases%20y%20objetos/create.dart';
+import 'package:calculadora_de_la_vida/screens/ScreenAdult.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget{
@@ -20,7 +23,7 @@ class MainScreen extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Align(alignment: Alignment.center),
-              const Text("Necesitamos algunas datos sobre ti",
+              const Text("Necesitamos algunos datos sobre ti",
               style: TextStyle(
                 fontSize: 25.0,
                 fontFamily: "Century Gothic",
@@ -57,6 +60,11 @@ class MainScreen extends StatelessWidget{
       showAlert(context);
     }else{
       int screen = calculateScree(int.parse(age));
+      if(screen ==2){
+        Create create = Create.getInstance();
+        create.edad = int.parse(age);
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenAdult()));
+      }
     }
 
   }
@@ -80,7 +88,7 @@ class MainScreen extends StatelessWidget{
         builder: (BuildContext context){
           return AlertDialog(
             title: const Text("Error"),
-            content:const Text("Para ingresar su edad solo debe de ingresar valores númericos"),
+            content:const Text("Ingresa tu edad dolo en valores númericos"),
             actions: [
               TextButton(
                 onPressed: (){

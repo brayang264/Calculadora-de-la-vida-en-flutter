@@ -8,7 +8,7 @@ class MyApp  extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "No se que va a ca",
+      title: "Calculadora de la vida",
       home: MainScreen(),
     );
   }

@@ -3,8 +3,9 @@ class Persona{
   int edad;
   int ahorros;
   int herencia;
+  int acumulado;
   //Constructor
-  Persona(this.edad,this.ahorros,this.herencia);
+  Persona(this.edad,this.ahorros,this.herencia,this.acumulado);
   //Getters and setters
   int get getEdad => edad;
   set setEdad(int edad) => this.edad = edad;

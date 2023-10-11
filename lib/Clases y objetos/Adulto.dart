@@ -1,4 +1,4 @@
-import 'package:calculadora_de_la_vida/Clases%20objetos/Joven.dart';
+import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Joven.dart';
 
 class Adulto extends Joven{
     int salario;
@@ -11,6 +11,7 @@ class Adulto extends Joven{
     required int estudios,
     required int recreacion,
     required int herencia,
+    required int acumulado,
     required int gastosPareja,
     required int subsidio,
     required this.salario,
@@ -18,5 +19,5 @@ class Adulto extends Joven{
     required this.hijos,
     required this.varios
   }):super(edad: edad,ahorros: ahorros,trabajoMT: 0,estudios: estudios,recreacion: recreacion,
-  gastosPareja: gastosPareja,subsidio: subsidio,herencia: herencia);
+  gastosPareja: gastosPareja,subsidio: subsidio,herencia: herencia,acumulado: acumulado);
 }
