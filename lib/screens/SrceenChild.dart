@@ -92,7 +92,7 @@ class ScreenChild extends StatelessWidget{
   //Metodos
   void nextStage(BuildContext context, String ahorros, String herencia, String mensualidad, String tiempoMens,
   String mandados){
-    if(!(isNumber(ahorros)||isNumber(herencia)||isNumber(mensualidad)||isNumber(tiempoMens)||isNumber(mandados))){
+    if(!(isNumber(ahorros)&&isNumber(herencia)&&isNumber(mensualidad)&&isNumber(tiempoMens)&&isNumber(mandados))){
       showAlert(context, "Ingrese solamente valores positivos o negativos\nSi no recibio alguno de los ingresos"
       " solicitados ponga un 0");
     }else{

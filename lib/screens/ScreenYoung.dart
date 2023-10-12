@@ -118,8 +118,8 @@ class ScreenYoung extends StatelessWidget{
   //Metodos
   void nextStage(BuildContext context, String salario, String trabajados, String ahorros,String herencia,
   String estudios, String recreacion, String pareja, String subsidio ){
-    if(!(isNumber(salario)||isNumber(trabajados)||isNumber(ahorros)||isNumber(herencia)
-    ||isNumber(estudios)||isNumber(recreacion)||isNumber(pareja)||isNumber(subsidio))){
+    if(!(isNumber(salario)&&isNumber(trabajados)&&isNumber(ahorros)&&isNumber(herencia)
+    &&isNumber(estudios)&&isNumber(recreacion)&&isNumber(pareja)&&isNumber(subsidio))){
       showAlert(context,"Ingrese solamente valores positivos o negativos\nSi no recibio alguno de los ingresos"
       " solicitados ponga un 0");
     }else{

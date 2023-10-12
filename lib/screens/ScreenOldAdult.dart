@@ -152,9 +152,9 @@ class ScreenOldAdult extends StatelessWidget{
   void nextStage(BuildContext context, String salario, String trabajados, String ahorros,String herencia,
   String estudios, String recreacion, String pareja, String subsidio, String inversiones, 
   String hijos, String varios, String pension ){
-    if(!(isNumber(salario)||isNumber(trabajados)||isNumber(ahorros)||isNumber(herencia)
-    ||isNumber(estudios)||isNumber(recreacion)||isNumber(pareja)||isNumber(subsidio)||isNumber(inversiones)
-    ||isNumber(hijos)||isNumber(varios)||isNumber(pension))){
+    if(!(isNumber(salario)&&isNumber(trabajados)&&isNumber(ahorros)&&isNumber(herencia)
+    &&isNumber(estudios)&&isNumber(recreacion)&&isNumber(pareja)&&isNumber(subsidio)&&isNumber(inversiones)
+    &&isNumber(hijos)&&isNumber(varios)&&isNumber(pension))){
       showAlert(context,"Ingrese solamente valores positivos o negativos\nSi no recibio alguno de los ingresos"
       " solicitados ponga un 0");
     }else{
