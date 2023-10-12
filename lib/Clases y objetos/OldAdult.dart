@@ -2,7 +2,11 @@ import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Adult.dart';
 
 class OldAdult extends Adult{
   int pension;
-  
+  // Constructor
+  OldAdult.n(this.pension) : super.n(0, 0, 0, 0);
+  // getters and setters
+  int get getPension => pension;
+  set setPension(int pension) => this.pension = pension;
   OldAdult({
     required int edad,
     required int ahorros,
