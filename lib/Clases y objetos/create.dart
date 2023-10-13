@@ -55,7 +55,7 @@ class Create{
     gastosPareja: pareja, salario: salario, herencia: herencia, subsidio: subsidio, inversiones: inversiones, 
     hijos: hijos, varios: varios, acumulado: acumulado, pension: pension);
     oldAdult = adultoMayor;
-    acumuladoAdult = acumulado;
+    acumuladoOldAdult = acumulado;
     acumuladoTotal += acumulado;
   }
 }
