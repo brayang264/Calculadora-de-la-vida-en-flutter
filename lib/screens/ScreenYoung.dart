@@ -1,7 +1,7 @@
+// ignore: file_names
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/create.dart';
 import 'package:calculadora_de_la_vida/screens/ScreenAdult.dart';
 import 'package:calculadora_de_la_vida/screens/ScreenFinal.dart';
-import 'package:calculadora_de_la_vida/screens/SrceenChild.dart';
 import 'package:flutter/material.dart';
 class ScreenYoung extends StatelessWidget{
   final TextEditingController _textController = TextEditingController();

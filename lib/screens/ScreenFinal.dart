@@ -1,5 +1,4 @@
-import 'dart:convert';
-
+// ignore: file_names
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Adult.dart';
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Joven.dart';
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/OldAdult.dart';
@@ -7,6 +6,7 @@ import 'package:calculadora_de_la_vida/Clases%20y%20objetos/child.dart';
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/create.dart';
 import 'package:calculadora_de_la_vida/screens/mainScreen.dart';
 import 'package:flutter/material.dart';
+// ignore: must_be_immutable
 class ScreenFinal extends StatelessWidget{
   Create create = Create.getInstance();
   Child? child;
@@ -20,6 +20,8 @@ class ScreenFinal extends StatelessWidget{
   String textAdult ="";
   String textOldAdult ="";
   String total="";
+
+  ScreenFinal({super.key});
   void obtenerVariables(){
     child = create.child;
     joven = create.young;
@@ -78,14 +80,14 @@ class ScreenFinal extends StatelessWidget{
                 color: Colors.black)
               ),
               const SizedBox(height: 50),
-              Text(total,
+              Text(textOldAdult,
               style: const TextStyle(
                 fontSize: 25.0,
                 fontFamily: "Century Gothic",
                 color: Colors.black)
               ),
               const SizedBox(height: 50),
-              Text(textChild,
+              Text(total,
               style: const TextStyle(
                 fontSize: 25.0,
                 fontFamily: "Century Gothic",

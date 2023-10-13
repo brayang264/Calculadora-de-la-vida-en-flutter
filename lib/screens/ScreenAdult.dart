@@ -14,9 +14,10 @@ class ScreenAdult extends StatelessWidget{
   final TextEditingController _textController9 = TextEditingController();
   final TextEditingController _textController10 = TextEditingController();
   final TextEditingController _textController11 = TextEditingController();
+
+  ScreenAdult({super.key});
   @override
-  Widget build(BuildContext context) {
-    bool isChecked = false;
+  Widget build(BuildContext context) {   
     return Scaffold(
       appBar: AppBar(
         title: const Text("Etapa de la adultez"),
