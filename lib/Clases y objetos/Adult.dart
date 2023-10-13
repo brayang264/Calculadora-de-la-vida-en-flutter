@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:calculadora_de_la_vida/Clases%20y%20objetos/Joven.dart';
 
 class Adult extends Joven{
@@ -31,4 +33,13 @@ class Adult extends Joven{
     required this.varios
   }):super(edad: edad,ahorros: ahorros,trabajoMT: 0,estudios: estudios,recreacion: recreacion,
   gastosPareja: gastosPareja,subsidio: subsidio,herencia: herencia,acumulado: acumulado);
+  //Getters and setters
+  int get getSalario => salario;
+  set setSalariio(int salario) => this.salario = salario;
+  int get getInversiones => inversiones;
+  set setInversiones(int inversiones) => this.inversiones;
+  int get getHijos => hijos;
+  set setHijos(int hijos)=> this.hijos =hijos;
+  int get gatVarios => varios;
+  set setVarios(int varios) => varios;
 }

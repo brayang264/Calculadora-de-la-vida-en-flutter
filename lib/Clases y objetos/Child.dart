@@ -18,4 +18,8 @@ class Child extends Persona{
     required this.mensualidad,
     required this.mandados
   }):super(edad,ahorros,herencia,acumulado);
+  int get getMensualidad => mensualidad;
+  set setMensualidad(int mensualidad)=>this.mensualidad = mensualidad;
+  int get getMandados => mandados;
+  set setMandados(int mandados) => this.mandados=mandados;
 }
