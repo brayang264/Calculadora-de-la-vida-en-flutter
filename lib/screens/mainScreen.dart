@@ -55,11 +55,20 @@ class MainScreen extends StatelessWidget{
       showAlert(context);
     }else{
       Create create = Create.getInstance();
+      resetValors(create);
         create.edad = int.parse(age);
         Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenChild()));
     }
-
   }
+
+  void resetValors(Create create){
+    create.acumuladoAdult =0;
+      create.acumuladoChid =0;
+      create.acumuladoJoven =0;
+      create.acumuladoOldAdult =0;
+      create.acumuladoTotal =0;
+  }
+
   bool isNumber(String text){
     return (int.tryParse(text)!=null)?true:false;
   }
